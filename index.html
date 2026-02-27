@@ -3,34 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Haram Yoo | Creative Portfolio</title>
+  <title>Haram Yoo ✨</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <!-- Fun + Readable Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     * { box-sizing: border-box; }
 
     body {
-      font-family: 'Inter', sans-serif;
       margin: 0;
-      background: radial-gradient(circle at top left, #f5e9ff, #e0f7fa, #ffffff);
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, #fdfbff, #e8f8ff, #ffffff);
       color: #1f2937;
       overflow-x: hidden;
     }
 
-    .gradient-orb {
+    .glow {
       position: fixed;
       width: 600px;
       height: 600px;
       background: radial-gradient(circle, rgba(147,51,234,0.18), transparent 60%);
       filter: blur(80px);
       z-index: -1;
-      animation: float 15s infinite alternate ease-in-out;
+      animation: float 18s infinite alternate ease-in-out;
     }
 
     @keyframes float {
       from { transform: translate(-50px, -30px); }
-      to { transform: translate(50px, 30px); }
+      to { transform: translate(60px, 40px); }
     }
 
     .container {
@@ -49,13 +50,14 @@
     }
 
     .hero h1 {
+      font-family: 'Playfair Display', serif;
       font-size: clamp(3.5rem, 6vw, 5.5rem);
       margin: 0;
       line-height: 1;
-      font-weight: 900;
       background: linear-gradient(90deg, #2563eb, #9333ea);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      letter-spacing: -1px;
     }
 
     .hero p {
@@ -71,11 +73,12 @@
       border-radius: 50%;
       border: 5px solid white;
       box-shadow: 0 12px 30px rgba(0,0,0,.2);
-      transition: transform .5s ease;
+      transition: all .5s ease;
     }
 
     .hero img:hover {
-      transform: rotate(-6deg) scale(1.1);
+      transform: rotate(-6deg) scale(1.12);
+      box-shadow: 0 18px 45px rgba(147,51,234,.45);
     }
 
     section {
@@ -83,61 +86,50 @@
     }
 
     section h2 {
-      font-size: 2.3rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
       margin-bottom: 35px;
       background: linear-gradient(90deg, #2563eb, #9333ea);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* STORY CARD */
+    /* STORY */
     .story {
-      background: rgba(255,255,255,0.85);
-      border-radius: 24px;
-      padding: 35px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.1);
+      background: rgba(255,255,255,0.9);
+      border-radius: 28px;
+      padding: 35px 40px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.12);
       font-size: 1.05rem;
-      line-height: 1.7;
-      transition: transform .4s ease;
+      line-height: 1.75;
+      transition: all .4s ease;
     }
 
     .story:hover {
-      transform: translateY(-6px);
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(0,0,0,.18);
     }
 
-    /* GRID CARDS */
+    /* GRID */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
       gap: 28px;
     }
 
     .card {
-      background: rgba(255,255,255,0.9);
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.1);
-      transition: transform .35s ease, box-shadow .35s ease;
+      background: rgba(255,255,255,0.92);
+      border-radius: 26px;
+      padding: 26px 28px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.1);
+      transition: all .35s ease;
       position: relative;
       overflow: hidden;
     }
 
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent, rgba(147,51,234,.1));
-      opacity: 0;
-      transition: opacity .35s;
-    }
-
-    .card:hover::after {
-      opacity: 1;
-    }
-
     .card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 25px 45px rgba(0,0,0,.18);
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 28px 55px rgba(147,51,234,.25);
     }
 
     .card strong {
@@ -151,7 +143,7 @@
       margin: 8px 0;
     }
 
-    /* HOBBIES */
+    /* TAGS */
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -159,21 +151,23 @@
     }
 
     .tag {
-      padding: 8px 16px;
-      border-radius: 20px;
+      padding: 9px 18px;
+      border-radius: 22px;
       font-weight: 600;
       color: white;
       background: linear-gradient(135deg,#2563eb,#9333ea);
-      transition: transform .3s ease;
+      transition: all .3s ease;
+      cursor: default;
     }
 
     .tag:hover {
-      transform: translateY(-4px) scale(1.05);
+      transform: translateY(-5px) scale(1.08);
+      box-shadow: 0 12px 30px rgba(147,51,234,.4);
     }
 
     /* CONTACT */
     .contact {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       display: flex;
       gap: 25px;
       flex-wrap: wrap;
@@ -200,16 +194,15 @@
 
 <body>
 
-<div class="gradient-orb"></div>
+<div class="glow"></div>
 
 <div class="container">
 
   <section class="hero">
     <div>
-      <h1>Haram Yoo</h1>
+      <h1>Haram Yoo ✨</h1>
       <p>
-        Undergraduate Informatics student at the University of Washington.<br>
-        Curious about how data, design, and technology shape human experience.
+        UW Informatics student 🌱 · aspiring data scientist 📊 · human before everything 💖
       </p>
     </div>
 
@@ -218,71 +211,75 @@
   </section>
 
   <section>
-    <h2>My Story</h2>
+    <h2>🌷 My Story</h2>
     <div class="story">
-      My interest in data science began unexpectedly when I took AP Computer Science A in high school without a specific goal in mind. 
-      As I learned how to think logically, debug problems, and slowly build working solutions, I discovered how satisfying problem-solving could be.
+      Hi! I’m Haram 💫 I was born on <strong>October 14, 2007 🎂</strong>, and I’m currently an undergraduate student at the University of Washington.  
+
       <br><br>
-      This curiosity led me to explore informatics and data science, where technology meets human-centered design. I became fascinated by how data can 
-      reveal patterns in behavior, improve systems, and create meaningful impact in education and society. I am still early in my journey, but I am deeply motivated to 
-      learn, grow, and build tools that help people.
+      I first got interested in tech just by randomly signing up for AP Computer Science A in high school (no deep reason at all 😭). But surprisingly, I ended up loving it. I enjoyed breaking down problems, debugging for hours, and finally seeing my code work — it felt like solving tiny puzzles all day 🧩  
+
+      <br><br>
+      That curiosity naturally led me to informatics and data science, where technology meets people, creativity, and real-world impact 🌍 I’m especially fascinated by how data can reveal stories about human behavior, learning, and decision-making.  
+
+      <br><br>
+      I’m still very early in my journey, but I’m extremely motivated to learn, grow, fail, improve, and build things that actually help people. I take opportunities seriously, care deeply about doing meaningful work, and always try to bring kindness, responsibility, and curiosity wherever I go 💌
     </div>
   </section>
 
   <section>
-    <h2>Projects</h2>
+    <h2>🚀 Projects</h2>
     <div class="grid">
       <div class="card">
-        <strong>Java Programming Projects</strong>
+        <strong>Java Programming Projects ☕</strong>
         <ul>
-          <li>Built object-oriented simulations and mini-games</li>
-          <li>Focused on abstraction, inheritance, debugging, and clean design</li>
+          <li>Built simulations & mini-games</li>
+          <li>Focused on abstraction, OOP & debugging</li>
         </ul>
       </div>
 
       <div class="card">
-        <strong>Django Web Application</strong>
+        <strong>Django Web Application 🌐</strong>
         <ul>
-          <li>Contributed to backend logic, debugging, and feature testing</li>
-          <li>Collaborated on documentation and architecture</li>
+          <li>Backend logic & feature testing</li>
+          <li>Debugging & documentation</li>
         </ul>
       </div>
     </div>
   </section>
 
   <section>
-    <h2>Leadership & Experience</h2>
+    <h2>🌈 Leadership & Experience</h2>
     <div class="grid">
 
       <div class="card">
-        <strong>Korean Student Union — Marketing Team Lead</strong>
+        <strong>Korean Student Union — Marketing Team 🎨</strong>
         <ul>
-          <li>Designed media campaigns to increase student engagement</li>
-          <li>Managed social platforms and analytics</li>
+          <li>Designed content to boost student engagement</li>
+          <li>Managed Instagram & YouTube</li>
         </ul>
       </div>
 
       <div class="card">
-        <strong>IT Teaching Assistant</strong>
+        <strong>IT Teaching Assistant 💻</strong>
         <ul>
-          <li>Supported CS coursework and AP Computer Science students</li>
-          <li>Provided hands-on technical support and tutoring</li>
+          <li>Supported AP CS students</li>
+          <li>Provided technical troubleshooting</li>
         </ul>
       </div>
 
       <div class="card">
-        <strong>Webmaster — CS Honor Society</strong>
+        <strong>Webmaster — CS Honor Society 🕸</strong>
         <ul>
-          <li>Designed and launched first official chapter website</li>
-          <li>Maintained UX and site structure</li>
+          <li>Built & maintained chapter website</li>
+          <li>Designed site structure & UX</li>
         </ul>
       </div>
 
       <div class="card">
-        <strong>Girls Varsity Basketball Team Captain</strong>
+        <strong>Basketball Team Captain 🏀</strong>
         <ul>
-          <li>Led practices, communication, and team coordination</li>
-          <li>Developed strategic planning and leadership skills</li>
+          <li>Led training & team coordination</li>
+          <li>Built leadership & communication skills</li>
         </ul>
       </div>
 
@@ -290,18 +287,18 @@
   </section>
 
   <section>
-    <h2>Outside of Code</h2>
+    <h2>🎀 Little Things I Love</h2>
     <div class="tags">
       <div class="tag">🎹 Piano</div>
       <div class="tag">📸 Photography</div>
-      <div class="tag">✈️ Travel</div>
+      <div class="tag">✈️ Traveling</div>
       <div class="tag">📚 Reading</div>
       <div class="tag">🎬 K-Drama</div>
     </div>
   </section>
 
   <section>
-    <h2>Contact</h2>
+    <h2>💌 Contact Me</h2>
     <div class="contact">
       📧 <a href="mailto:haramy00@uw.edu">haramy00@uw.edu</a>
       📞 206-251-0562
@@ -309,7 +306,7 @@
   </section>
 
   <footer>
-    © 2026 Haram Yoo
+    Made with 💜 by Haram · 2026
   </footer>
 
 </div>
