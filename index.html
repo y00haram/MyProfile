@@ -11,11 +11,12 @@
   <style>
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #f9fafb;
+      background: linear-gradient(160deg, #f9fafb, #e0f2fe);
       margin: 0;
       padding: 0;
       color: #1f2937;
       line-height: 1.6;
+      transition: background 0.5s ease;
     }
 
     a {
@@ -45,29 +46,34 @@
     }
 
     .header img {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #2563eb;
+      border: 4px solid #2563eb;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 4px 12px rgba(37,99,235,0.3);
     }
 
     .header img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 20px rgba(37,99,235,0.4);
+      transform: scale(1.1) rotate(-2deg);
+      box-shadow: 0 12px 25px rgba(37,99,235,0.5);
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       margin: 0;
       color: #111827;
+      background: linear-gradient(90deg, #2563eb, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .subtitle {
       font-size: 1.1rem;
       color: #6b7280;
       margin-top: 5px;
+      font-style: italic;
     }
 
     p {
@@ -87,23 +93,24 @@
       -webkit-text-fill-color: transparent;
       border-bottom: 2px solid #e5e7eb;
       padding-bottom: 6px;
+      position: relative;
     }
 
     /* Cards */
     .card {
       background: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      padding: 25px 20px;
+      border-radius: 16px;
+      margin-top: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
       overflow: hidden;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.15);
     }
 
     .card::after {
@@ -113,7 +120,7 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, rgba(37,99,235,0.15), transparent 70%);
+      background: radial-gradient(circle, rgba(37,99,235,0.12), transparent 70%);
       transform: rotate(45deg);
       opacity: 0;
       transition: opacity 0.5s ease;
@@ -125,6 +132,7 @@
 
     ul {
       padding-left: 20px;
+      margin: 8px 0;
     }
 
     .skills {
@@ -135,11 +143,11 @@
 
     /* Contact */
     .contact {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
       font-size: 1.05rem;
       color: #374151;
+      display: flex;
+      gap: 20px;
+      align-items: center;
     }
 
     .contact a {
@@ -151,21 +159,23 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 5px;
+      margin-top: 10px;
     }
 
     .hobby {
-      background: #e0e7ff;
-      padding: 5px 10px;
-      border-radius: 8px;
+      background: linear-gradient(135deg, #93c5fd, #a78bfa);
+      padding: 6px 12px;
+      border-radius: 12px;
       font-size: 0.95rem;
-      color: #1e3a8a;
-      transition: all 0.3s ease;
+      color: white;
+      font-weight: 500;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
     }
 
     .hobby:hover {
-      background: linear-gradient(90deg, #2563eb, #9333ea);
-      color: white;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(37,99,235,0.4);
     }
 
     .footer {
@@ -181,6 +191,11 @@
       object-fit: cover;
       border-radius: 12px;
       margin-top: 20px;
+      transition: transform 0.4s ease;
+    }
+
+    .decorative-img:hover {
+      transform: scale(1.03);
     }
   </style>
 </head>
@@ -190,7 +205,7 @@
 
     <!-- Header -->
     <div class="header">
-      <img src="https://www.istockphoto.com/photos/animated-cats" alt="Haram Yoo Profile Photo">
+      <img src="https://www.dreamstime.com/cute-black-cat-cartoon-violet-image377360108" alt="Haram Yoo Profile Photo">
       <div>
         <h1>Haram Yoo</h1>
         <div class="subtitle">Undergraduate Informatics Student @ University of Washington</div>
@@ -319,8 +334,7 @@
     <section id="contact">
       <h2>Contact</h2>
       <div class="contact">
-        <div>📧 <a href="mailto:haramy00@uw.edu">haramy00@uw.edu</a></div>
-        <div>📞 206-251-0562</div>
+        📧 <a href="mailto:haramy00@uw.edu">haramy00@uw.edu</a> &nbsp; | &nbsp; 📞 206-251-0562
       </div>
     </section>
 
